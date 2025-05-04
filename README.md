@@ -1,29 +1,42 @@
 # TaskMate AI
 
-A modern Angular app that uses AI to parse natural‑language task requests, auto‑fill a form, and manage your tasks.
+**TaskMate AI** is a modern Angular app that uses AI to parse natural‑language task requests, auto‑fill a form, and manage your tasks.
 
 ## Features
 
-- Enter tasks in natural language (e.g. “Schedule a call with John on Friday at 3 PM”)
+- Natural‑language task entry (e.g. “Schedule a call with John on Friday at 3 PM”)
 - AI‑powered extraction of title, date, time, and priority
-- Review & edit parsed fields in a form
-- Save tasks in memory and view history
+- Review & edit parsed fields before saving
+- In‑memory task store with history
 - Responsive UI with Tailwind CSS
-- Contact Us and About Us pages
+- Built‑in About Us and Contact Us pages
 
 ## Prerequisites
 
-- Node.js ≥ 16
+- Node.js v16 or higher
 - npm or yarn
-- Angular CLI
+- Angular CLI (`npm install -g @angular/cli`)
 
-## Installation
+## Setup
 
-```bash
-git clone <repo-url> /home/palak/Desktop/todo-list
-cd /home/palak/Desktop/todo-list
-npm install
-```
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/your-org/todo-list.git
+   cd todo-list
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Create your local environment file
+   ```bash
+   cp src/environments/environment.example.ts src/environments/environment.ts
+   ```
+   Then open `src/environments/environment.ts` and replace the placeholder API key.
 
 ## Running the App
 
@@ -31,28 +44,20 @@ npm install
 ng serve
 ```
 
-Open http://localhost:4200 in your browser.
+Open [http://localhost:4200](http://localhost:4200) in your browser.
 
-## Project Structure
+## Scripts
 
-src/app/
-├── components/
-│ ├── home/ # Landing page
-│ ├── get-started/ # AI input & form
-│ ├── task-manager/ # Review & save tasks
-│ ├── contact-us/ # Contact form
-│ └── about-us/ # About page
-├── services/
-│ ├── ai.service.ts # AI extraction logic
-│ └── task.service.ts # In‑memory task store
-├── app.routes.ts # Route definitions
-└── app.component.html # Header/footer layout
+- `ng serve` – start development server
+- `ng build` – build production bundle
+- `npm test` – run unit tests
 
 ## Contributing
 
-1. Fork the repo
-2. Create a feature branch
-3. Submit a pull request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/xyz`)
+3. Commit your changes and push (`git push origin feature/xyz`)
+4. Open a pull request
 
 ## License
 
