@@ -1,0 +1,22 @@
+.container {
+  background: linear-gradient(
+    to bottom,
+    #f9fafb,
+    #ffffff
+  ); /* Subtle gradient */
+  border-radius: 1rem;
+  padding: 2rem;
+}
+h2 {
+  color: #1f2937; /* Dark gray */
+}
+h3 {
+  color: #111827; /* Darker gray */
+}
+p {
+  line-height: 1.75;
+}
+.grid div:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

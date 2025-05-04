@@ -1,0 +1,93 @@
+/* Instructions Section */
+.instructions-section {
+  background: #f3f4f6; /* Light gray background */
+  color: #1f2937; /* Dark gray text */
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.instructions-section h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #111827; /* Darker gray for heading */
+}
+
+.instructions-section p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.instructions-section ul {
+  margin: 0 auto 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 40rem;
+  text-align: left;
+}
+
+.instructions-section ul li {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: #374151; /* Medium gray for list items */
+}
+
+.instructions-section ul li::before {
+  content: "✔"; /* Add a checkmark icon */
+  color: #3b82f6; /* Blue color for the icon */
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Input Section */
+.input-section {
+  background: #ffffff; /* White background */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.input-section h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-section textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-section textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.input-section button {
+  width: 100%;
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.input-section button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}

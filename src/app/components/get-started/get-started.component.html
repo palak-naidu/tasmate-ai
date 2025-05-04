@@ -1,0 +1,65 @@
+<div class="container mx-auto px-4 py-12 max-w-4xl space-y-10">
+  <!-- Instructions Section -->
+  <div class="bg-gray-100 text-gray-800 p-8 rounded-2xl shadow-lg text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">🧠 How to Get Started</h2>
+    <p class="text-lg mb-6">
+      Enter your task in natural language, and let AI handle the rest! For
+      example:
+    </p>
+    <ul class="text-left max-w-2xl mx-auto space-y-2 list-none">
+      <li class="flex items-start gap-2">
+        <span class="text-blue-500 text-lg">✔</span>
+        <span>Schedule a meeting with Alex on Friday at 2 PM.</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-blue-500 text-lg">✔</span>
+        <span>Remind me to call John tomorrow morning.</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-blue-500 text-lg">✔</span>
+        <span>Plan a team lunch next Wednesday at 1 PM.</span>
+      </li>
+    </ul>
+    <p class="mt-6 text-base italic text-gray-600">
+      Be as specific as possible to get the best results!
+    </p>
+  </div>
+
+  <!-- Input Section -->
+  <div class="bg-white p-8 rounded-2xl shadow-xl">
+    <h3 class="text-2xl font-semibold text-center text-gray-800 mb-6">
+      📝 Enter Your Request
+    </h3>
+    <textarea
+      [(ngModel)]="userInput"
+      rows="5"
+      class="w-full p-4 border border-gray-300 rounded-lg text-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition"
+      placeholder="Type your request here..."
+    ></textarea>
+    <button
+      (click)="processInput()"
+      class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg text-lg transition-all duration-200 shadow hover:shadow-md transform hover:-translate-y-0.5"
+    >
+      ✨ Submit
+    </button>
+
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="mt-4 text-center">
+      <span class="text-blue-600 text-lg font-medium"
+        >Processing your request...</span
+      >
+    </div>
+
+    <!-- Response Message -->
+    <div *ngIf="responseMessage" class="mt-4 text-center">
+      <p class="text-gray-700 text-lg">{{ responseMessage }}</p>
+    </div>
+  </div>
+
+  <!-- Task Manager Component -->
+  <app-task-manager
+    [taskForm]="taskForm"
+    [taskExtracted]="taskExtracted"
+    (taskSaved)="onChildSave()"
+  ></app-task-manager>
+</div>

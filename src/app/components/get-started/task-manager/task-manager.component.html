@@ -1,0 +1,88 @@
+<!-- Review & Edit Section -->
+<div *ngIf="taskExtracted" class="bg-gray-50 p-8 rounded-2xl shadow-lg mt-8">
+  <h3 class="text-2xl font-semibold text-center text-gray-800 mb-6">
+    📝 Review and Edit Your Task
+  </h3>
+  <table class="table-auto w-full border-collapse border border-gray-300 mb-6">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-300 px-4 py-2 text-left">Field</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">Title</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <input
+            type="text"
+            class="w-full p-2 border border-gray-300 rounded"
+            [(ngModel)]="taskForm.value.title"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">Date</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <input
+            type="date"
+            class="w-full p-2 border border-gray-300 rounded"
+            [(ngModel)]="taskForm.value.date"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">Time</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <input
+            type="time"
+            class="w-full p-2 border border-gray-300 rounded"
+            [(ngModel)]="taskForm.value.time"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 px-4 py-2">Priority</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <select
+            class="w-full p-2 border border-gray-300 rounded"
+            [(ngModel)]="taskForm.value.priority"
+          >
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    (click)="saveTask()"
+    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg"
+  >
+    💾 Save Task
+  </button>
+</div>
+
+<!-- Saved Tasks History -->
+<div *ngIf="tasks.length" class="bg-gray-50 p-8 rounded-2xl shadow-lg mt-8">
+  <h4 class="text-xl font-semibold mb-4">📋 Saved Tasks</h4>
+  <table class="table-auto w-full border-collapse border border-gray-300">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border px-4 py-2">Title</th>
+        <th class="border px-4 py-2">Date</th>
+        <th class="border px-4 py-2">Time</th>
+        <th class="border px-4 py-2">Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tasks; let i = index">
+        <td class="border px-4 py-2">{{ t.title }}</td>
+        <td class="border px-4 py-2">{{ t.date }}</td>
+        <td class="border px-4 py-2">{{ t.time }}</td>
+        <td class="border px-4 py-2">{{ t.priority }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
